@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgMundo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bgMundo)"/>
+
+  <!-- Grid Map Lines Simulation -->
+  <g stroke="#1e3a5f" stroke-width="1.5" opacity="0.4">
+    <line x1="50" y1="0" x2="50" y2="500"/>
+    <line x1="150" y1="0" x2="150" y2="500"/>
+    <line x1="250" y1="0" x2="250" y2="500"/>
+    <line x1="350" y1="0" x2="350" y2="500"/>
+    <line x1="450" y1="0" x2="450" y2="500"/>
+    <line x1="550" y1="0" x2="550" y2="500"/>
+    <line x1="650" y1="0" x2="650" y2="500"/>
+    <line x1="750" y1="0" x2="750" y2="500"/>
+
+    <line x1="0" y1="70" x2="800" y2="70"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="230" x2="800" y2="230"/>
+    <line x1="0" y1="310" x2="800" y2="310"/>
+    <line x1="0" y1="390" x2="800" y2="390"/>
+    <line x1="0" y1="470" x2="800" y2="470"/>
+  </g>
+
+  <!-- Route Polyline (Google Maps representation) -->
+  <path d="M 120 380 Q 240 280 320 320 T 480 200 T 680 140" fill="none" stroke="url(#routeGrad)" stroke-width="6" stroke-linecap="round" stroke-dasharray="10 6" filter="url(#glow)"/>
+
+  <!-- Pin 1 -->
+  <g transform="translate(120, 380)">
+    <circle r="14" fill="#10b981" filter="url(#glow)"/>
+    <circle r="6" fill="#ffffff"/>
+    <text x="20" y="5" fill="#ffffff" font-family="Arial" font-size="12" font-weight="bold">Ponto de Coleta A</text>
+  </g>
+
+  <!-- Pin 2 -->
+  <g transform="translate(320, 320)">
+    <circle r="14" fill="#3b82f6" filter="url(#glow)"/>
+    <circle r="6" fill="#ffffff"/>
+    <text x="20" y="5" fill="#ffffff" font-family="Arial" font-size="12" font-weight="bold">EcoPonto Central</text>
+  </g>
+
+  <!-- Pin 3 (Destination / ASA Indústria) -->
+  <g transform="translate(680, 140)">
+    <circle r="18" fill="#10b981" filter="url(#glow)"/>
+    <circle r="8" fill="#ffffff"/>
+    <text x="-120" y="-12" fill="#34d399" font-family="Arial" font-size="14" font-weight="bold">ASA Indústria (Fábrica)</text>
+  </g>
+
+  <!-- Top Glass Dashboard Card -->
+  <rect x="40" y="30" width="460" height="90" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+  <text x="65" y="65" fill="#10b981" font-family="Arial" font-size="18" font-weight="bold">Projeto Mundo Limpo</text>
+  <text x="65" y="90" fill="#94a3b8" font-family="Arial" font-size="12">ASA Indústria • Logística Reversa &amp; Google Maps API</text>
+  <rect x="360" y="50" width="120" height="30" rx="8" fill="#10b981" fill-opacity="0.2" stroke="#10b981"/>
+  <text x="382" y="70" fill="#34d399" font-family="Arial" font-size="11" font-weight="bold">Coleta Ativa</text>
+
+  <!-- Bottom Metric Card -->
+  <rect x="520" y="360" width="240" height="100" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+  <text x="540" y="390" fill="#94a3b8" font-family="Arial" font-size="11">Total de Óleo Reciclado</text>
+  <text x="540" y="425" fill="#ffffff" font-family="Arial" font-size="24" font-weight="bold">+120.000 L</text>
+  <text x="540" y="445" fill="#10b981" font-family="Arial" font-size="11">● 48 Pontos Conectados em PE</text>
+</svg>
